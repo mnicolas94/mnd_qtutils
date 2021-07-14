@@ -1,7 +1,7 @@
 import cv2 as cv
 from PySide2 import QtGui
 from PySide2.QtGui import QPixmap
-from PySide2.QtWidgets import QLabel
+from PySide2.QtWidgets import QLabel, QSizePolicy
 import qimage2ndarray
 
 import mnd_utils.image
@@ -55,7 +55,7 @@ class AspectRatioImage(QLabel):
 if __name__ == '__main__':
 	import sys
 	from PySide2 import QtWidgets
-	from PySide2.QtWidgets import QLabel, QSizePolicy, QWidget, QApplication, QFrame
+	from PySide2.QtWidgets import QWidget, QApplication, QFrame
 	app = QApplication(sys.argv)
 
 	window = QWidget()
