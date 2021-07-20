@@ -24,6 +24,17 @@ def setup_widget_from_ui(ui_file_path: str, parent: QtWidgets.QWidget):
 	return widget
 
 
+def setup_widget_from_py_ui(pyui_file_path: str, parent: QtWidgets.QWidget):
+	widget = import_from_ui_file(pyui_file_path)
+
+	layout = QtWidgets.QVBoxLayout()
+	layout.setContentsMargins(0, 0, 0, 0)
+	parent.setLayout(layout)
+	layout.addWidget(widget)
+
+	return widget
+
+
 def icon_from_image(img: np.ndarray):
 	return QIcon(QPixmap.fromImage(qimage2ndarray.array2qimage(img)))
 
