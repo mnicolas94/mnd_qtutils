@@ -60,6 +60,8 @@ class ImageEditWidget(QtWidgets.QWidget):
         self._update_image()
 
     def _update_image(self):
+        if self._image is None:
+            return
         size = self._image_label.size()
         img = cv.cvtColor(self._image, cv.COLOR_BGR2RGB)
         img = mnd_utils.image.fit_in_size(img, (size.width(), size.height()))
