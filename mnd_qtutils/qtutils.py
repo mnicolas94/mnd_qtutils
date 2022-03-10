@@ -59,7 +59,6 @@ def get_image_from_drop_event(event: QtGui.QDropEvent):
 		if len(urls) > 1:
 			return
 		image_path: str = urls[0].url()
-		print(image_path)
 		if not image_path.startswith("file:///"):
 			return
 		# is a file
